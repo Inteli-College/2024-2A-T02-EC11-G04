@@ -16,12 +16,12 @@ const config = {
   url: "https://your-docusaurus-site.example.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/2024-1B-T02-EC10-G02/",
+  baseUrl: "/2024-2A-T02-EC11-G04/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Inteli-College", // Usually your GitHub org/user name.
-  projectName: "2024-1B-T02-EC10-G02", // Usually your repo name.
+  projectName: "2024-2A-T02-EC11-G04", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -57,7 +57,7 @@ const config = {
       // Replace with your project's social card
       image: "img/inteli.svg",
       navbar: {
-        title: "Ritalinos",
+        title: "Greentch",
         logo: {
           alt: "Logo Inteli",
           src: "img/inteli.svg",
@@ -100,7 +100,7 @@ const config = {
             label: "Sprint 5",
           },
           {
-            href: "https://github.com/Inteli-College/2024-1B-T02-EC10-G02/",
+            href: "https://github.com/Inteli-College/2024-2A-T02-EC12-G04/",
             label: "GitHub",
             position: "right",
           },
