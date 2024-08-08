@@ -1,7 +1,7 @@
 # Inteli - Instituto de Tecnologia e Liderança - G4 M11
 
 <p align="center">
-<a href= "https://www.inteli.edu.br/"><img src="documentos/outros/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
+<a href= "https://www.inteli.edu.br/"><img src="imgs/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
 # Nome do projeto
