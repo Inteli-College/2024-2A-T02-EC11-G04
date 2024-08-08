@@ -6,7 +6,7 @@ on:
       - main
       # - dev
     paths:
-      - "docs/greench/**"
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
@@ -50,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./greench/build
 
       - name: Deploy to GitHub Pages
         id: deployment
