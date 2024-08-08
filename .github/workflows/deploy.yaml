@@ -39,7 +39,7 @@ jobs:
 
       - name: Install and Build
         run: |
-          cd docs
+          cd docs/greench
           npm install
           npm run build
           mv build ../build
