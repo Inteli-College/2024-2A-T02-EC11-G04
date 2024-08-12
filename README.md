@@ -29,10 +29,10 @@ Vamos contar árvores em determinadas áreas com o uso de visão computacional (
 
 ## 📁 Estrutura de pastas
 
-├── src/               // Códigos príncipais do projeto
-├── docs/              // Documentação do projeto
-├── imgs/              // Imagens utilizadas no projeto
-├── README             // Descrição geral do projeto
+- **src/**: Contém os códigos principais do projeto, incluindo a implementação das funcionalidades centrais.
+- **docs/**: Diretório destinado à documentação do projeto, onde você encontrará manuais, guias e informações sobre o desenvolvimento.
+- **imgs/**: Armazena as imagens utilizadas no projeto, seja para a interface, documentação ou outros propósitos visuais.
+- **README**: Arquivo que fornece uma visão geral do projeto, incluindo descrição, instruções de uso e informações gerais.
 
 ## 💻 Execução dos projetos
 
