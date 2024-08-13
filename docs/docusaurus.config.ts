@@ -61,7 +61,7 @@ const config: Config = {
       title: 'Greentch',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/Logo.jpg',
+        src: 'img/Logo.png',
       },
       items: [
         {
