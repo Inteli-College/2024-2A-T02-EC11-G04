@@ -7,7 +7,7 @@ sidebar_position: 1
 - Versão : 1.0.0
 
 **Problema**  
-A Abundance Brasil está em uma missão de revolucionar a conservação ambiental e precisamos de ajuda para transformar a maneira como contamos árvores em vastas áreas florestais. O método tradicional e manual de contagem é demorado e propenso a erros, prejudicando o cálculo do carbono que a floresta retira da atmosfera, o que, por sua vez, afeta o processo de geração de crédito de carbono. Esses créditos são essenciais para remunerar os proprietários e preservar as florestas.
+A Abundance Brasil está em uma missão de revolucionar a conservação ambiental e nossa equipe irá transformar a maneira como contamos árvores em vastas áreas florestais. O método tradicional e manual de contagem é demorado e propenso a erros, prejudicando o cálculo do carbono que a floresta retira da atmosfera, o que, por sua vez, afeta o processo de geração de crédito de carbono. Esses créditos são essenciais para remunerar os proprietários e preservar as florestas.
 
 **Objetivo**  
 O objetivo é desenvolver uma ferramenta eficiente e precisa para contar a quantidade de árvores em imagens capturadas por uma câmera embarcada em um Raspberry Pi. Este projeto visa acelerar o processo de contagem e garantir a escalabilidade necessária para monitorar grandes áreas de floresta com precisão, gerando um impacto significativo na preservação ambiental.
@@ -15,7 +15,7 @@ O objetivo é desenvolver uma ferramenta eficiente e precisa para contar a quant
 **Arquitetura da Solução**  
 A solução tecnológica proposta combina hardware acessível com processamento local eficiente e uma infraestrutura em nuvem robusta, garantindo escalabilidade e precisão:
 
-![Arquitetura](docs\static\img\Arquitetura.jpg)
+![Arquitetura](../../static/img/Arquitetura.jpg)
 
 1. **Captura e Processamento Local (Raspberry Pi e TensorFlow Lite)**  
    O Raspberry Pi, equipado com uma câmera e um modelo pré-treinado em TensorFlow Lite, realiza a captura e análise das imagens localmente. O modelo identifica as árvores e extrai informações essenciais, como a posição e a quantidade.
