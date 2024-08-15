@@ -21,7 +21,7 @@
 
 ## 📝 Descrição
 
-Vamos contar árvores em determinadas áreas com o uso de visão computacional (IA) e embarcados.
+Utilizaremos visão computacional e sistemas embarcados para realizar a contagem automatizada de árvores em áreas específicas, aplicando técnicas avançadas de inteligência artificial.
 
 ## :book: Documentação:
 
