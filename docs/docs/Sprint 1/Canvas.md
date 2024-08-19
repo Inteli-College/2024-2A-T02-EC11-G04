@@ -27,7 +27,7 @@ sidebar_position: 1
 - **Ineficiência e erros associados ao processo de contagem manual.**
 - **Altos custos trabalhistas relacionados à contagem manual.**
 
-## Trabalhos a Serem Feitos
+## Tarefas do cliente
 - **Contagem e registro manual da quantidade de árvores para gestão florestal.**
 
 
