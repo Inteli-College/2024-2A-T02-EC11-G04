@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Canvas de Proposta de Valor
 
+ ![image](https://github.com/user-attachments/assets/47168fb9-a9c6-4a56-9047-f59352cc86ae)
+
 ## Visão Computacional
 - **Aumenta a acurácia e confiabilidade na contagem de árvores.**
 - **Elimina a necessidade de contagem manual.**
