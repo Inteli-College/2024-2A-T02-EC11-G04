@@ -68,6 +68,8 @@ Esta parte do projeto demonstrou a viabilidade de treinar e converter modelos de
 
 ## Links
 
+
+- [Repositório no GitHub](https://github.com/Gabi-Barretto/M11-Individual/tree/main/Sprint%202%20-%20Modelos)
 - [Dataset - Tree-Top-View](https://universe.roboflow.com/treedataset-clsqo/tree-top-view)
 - [Link do Colab - Treinamento](https://drive.google.com/file/d/1L4HlOHFmVwGWDg0S9MjdTjTKGfthfNep/view?usp=sharing)
 - [Link do Colab - Conversão](https://drive.google.com/file/d/1oGrrnCqZr_I4NFB_r3fkGwDKiMTjMMId/view?usp=sharing)
