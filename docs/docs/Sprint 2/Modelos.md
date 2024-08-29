@@ -1,4 +1,4 @@
-# Treinamento e Conversão de Modelos YOLOv8 para Raspberry Pi 5
+# Modelos
 
 ## Introdução
 
@@ -28,13 +28,13 @@ O YOLOv8 foi escolhido pela sua capacidade de detecção rápida e precisa, com 
 
 - **Configuração do Modelo**: Ajustamos hiperparâmetros como taxa de aprendizado e tamanhos de lote para otimizar o desempenho em hardware limitado.
 
-````
-model.train(data='./data.yaml', epochs=100, imgsz=244, batch=16, amp=False)
-````
-
 - **Avaliação**: Implementamos técnicas de visualização de bounding boxes para validar a performance em diferentes cenários antes da conversão.
 
 [Link do Colab - Treinamento](https://drive.google.com/file/d/1L4HlOHFmVwGWDg0S9MjdTjTKGfthfNep/view?usp=sharing)
+
+| Result - 1 | Result - 2 |
+|:--------:|:--------:|
+| ![Result-1](../../static/img/result-yolo-1.jpg) | ![Result-2](../../static/img/result-yolo-2.jpg) |
 
 ### Conversão para TFLite e ONNX
 
@@ -44,6 +44,10 @@ Dada a necessidade de rodar os modelos em um Raspberry Pi 5, a conversão para T
 - **ONNX**: A conversão para ONNX garante que o modelo possa ser utilizado em diferentes frameworks e dispositivos, oferecendo flexibilidade adicional.
 
 [Link do Colab - Conversão](https://drive.google.com/file/d/1oGrrnCqZr_I4NFB_r3fkGwDKiMTjMMId/view?usp=sharing)
+
+| ONNX | TFLite |
+|:--------:|:--------:|
+| ![Result-ONNX](../../static/img/result-onnx.png) | ![Result-TFLite](../../static/img/result-tflite.png) |
 
 ### Desempenho no Raspberry Pi 5
 
