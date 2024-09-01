@@ -1,4 +1,8 @@
-# Modelos
+---
+title: Modelo YoloV8
+sidebar_position: 1
+---
+
 
 ## Introdução
 
@@ -34,7 +38,7 @@ O YOLOv8 foi escolhido pela sua capacidade de detecção rápida e precisa, com 
 
 | Result - 1 | Result - 2 |
 |:--------:|:--------:|
-| ![Result-1](../../static/img/result-yolo-1.jpg) | ![Result-2](../../static/img/result-yolo-2.jpg) |
+| ![Result-1](../../../static/img/result-yolo-1.jpg) | ![Result-2](../../../static/img/result-yolo-2.jpg) |
 
 ### Conversão para TFLite e ONNX
 
@@ -47,7 +51,7 @@ Dada a necessidade de rodar os modelos em um Raspberry Pi 5, a conversão para T
 
 | ONNX | TFLite |
 |:--------:|:--------:|
-| ![Result-ONNX](../../static/img/result-onnx.png) | ![Result-TFLite](../../static/img/result-tflite.png) |
+| ![Result-ONNX](../../../static/img/result-onnx.png) | ![Result-TFLite](../../../static/img/result-tflite.png) |
 
 ### Desempenho no Raspberry Pi 5
 
