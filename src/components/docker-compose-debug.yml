@@ -1,0 +1,44 @@
+name: greentech-debug 
+
+services:
+  auth-service:
+    container_name: auth-service
+    env_file:
+      - auth/api/.env
+    build:
+      context: auth/api
+      dockerfile: Dockerfile
+    command: uvicorn app:app --host 0.0.0.0 --port 5000 --reload
+    ports:
+      - 5000:5000
+    volumes:
+      - ./auth/api:/app
+    depends_on:
+      auth-database:
+        condition: service_healthy
+    networks:
+      - network
+
+  auth-database:
+    image: postgres:latest
+    container_name: auth-database
+    restart: always
+    env_file:
+      - auth/api/.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    ports:
+      - 5432:5432
+    networks:
+      - network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "${POSTGRES_DATABASE}"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+networks:
+  network:
+    driver: bridge
