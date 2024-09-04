@@ -13,7 +13,7 @@ class SessionManager:
         self.session = None
 
     def __enter__(self):
-        """_summary_
+        """Represents the start of the session.
 
         Returns:
             self: Returns the session object.
@@ -22,7 +22,7 @@ class SessionManager:
         return self.session
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        """_summary_
+        """Represents the end of the session.
 
         Args:
             exc_type (ExceptionType): Exception type.
@@ -60,4 +60,3 @@ class SessionManager:
         if self.session is None:
             raise RuntimeError("SessionManager must be implemented using with statements.")
         return self.session
-

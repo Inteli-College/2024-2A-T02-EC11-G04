@@ -1,7 +1,9 @@
 from pydantic import BaseModel
 
-from typing import Optional
+from datetime import datetime
+from typing import Annotated, List, Optional
 
+from .token_schema import TokenOutput
 
 class UserInput(BaseModel):
     username: str
@@ -9,8 +11,8 @@ class UserInput(BaseModel):
 
 
 class UserOutput(BaseModel):
-    user_id: int
-    username: str
-    email: Optional[str]
-    created_at: str
+    username: Annotated[str, "Username"]
+    email: Annotated[Optional[str], "Email"]
+    tokens: Annotated[List[Optional[TokenOutput]], "Associated tokens"]
+    created_at: Annotated[datetime, "Creation date"]
 

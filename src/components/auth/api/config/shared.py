@@ -15,4 +15,3 @@ engine = create_engine(
 
 class Base(DeclarativeBase):
     pass
-

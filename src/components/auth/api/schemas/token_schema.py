@@ -1,7 +1,7 @@
 from pydantic import BaseModel, computed_field
 
 from datetime import datetime
-from typing import Annotated, List
+from typing import Annotated
 from uuid import uuid4
 
 from utils import TokenEncoder

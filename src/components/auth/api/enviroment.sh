@@ -15,7 +15,7 @@ secret_generator() {
     echo '# Postgres stuff'
     echo POSTGRES_USER=youruser
     echo POSTGRES_PASSWORD=youpassword
-    echo POSTGRES_HOST=yourhost
+    echo POSTGRES_HOST=yourhost # If you are using docker-compose, use the service name
     echo POSTGRES_PORT=5432
     echo POSTGRES_DATABASE=yourdatabase
 ) > example.env

@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 from contextlib import asynccontextmanager
+from fastapi import FastAPI
 
 from controllers import auth_controller
 from utils import Logger, create_tables
@@ -16,7 +16,7 @@ async def lifespan(app: FastAPI):
             "Database connection cannot be stablised | Error: %s",
             str(e)
         )
-        raise f"Error caught on datbase connection: {e}"
+        raise f"Error caught on datbase connection: {str(e)}"
     finally:
         print("Database connection stablised")
 
@@ -24,7 +24,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Greentech Auth API",
     version="1.0.0",
-    lifespan=lifespan
+    lifespan=lifespan,
+    root_path="/greentech"
 )
 
 app.include_router(auth_controller.auth_router)
