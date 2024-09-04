@@ -1,0 +1,12 @@
+# Ignores python common files
+*.pyc
+__pycache__/
+.pytest_cache
+
+# Enviroment stuff
+venv/
+*.env
+*.prod
+
+# Linter stuff
+.ruff_cache
