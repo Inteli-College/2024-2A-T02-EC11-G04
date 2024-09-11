@@ -3,3 +3,5 @@ uvicorn
 pydantic
 pillow
 rembg
+torch
+transformers

@@ -13,6 +13,8 @@ RUN pip install python-multipart
 
 # Copy the application code
 COPY ./main.py /app/main.py
+COPY ./model_segformer_classes.json /app/model_segformer_classes.json
+COPY ./model_segformer.pth /app/model_segformer.pth
 
 # Expose the port the app runs on
 EXPOSE 8001
