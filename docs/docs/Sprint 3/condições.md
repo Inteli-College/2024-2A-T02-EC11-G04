@@ -1,5 +1,5 @@
 ---
-title: Condições
+title: Condições de Implementação
 sidebar_position: 1
 ---
 
@@ -12,10 +12,12 @@ sidebar_position: 1
 **Embarcado**:
 
 Sprint Atual:
-Nesta sprint, nosso objetivo é garantir que o modelo de segmentação consiga rodar no Raspberry Pi, mesmo que com baixa performance. O foco é processar as imagens e armazená-las localmente no dispositivo. Com essa abordagem, estimamos que cerca de 90% do trabalho está concluído, já que, nesta fase, não estamos priorizando a performance de processamento, mas sim a capacidade de executar o modelo e armazenar as imagens localmente.
+Nesta sprint, nosso objetivo é garantir que o modelo de segmentação consiga rodar no Raspberry Pi, mesmo que com baixa performance. O foco é processar as imagens e armazená-las localmente no dispositivo. Com essa abordagem, estimamos que cerca de 80% do trabalho da sprint está concluído, já que, nesta fase, não estamos priorizando a performance de processamento, mas sim a capacidade de executar o modelo e armazenar as imagens localmente.
 
 Sprint Final:
-Para a sprint final, planejamos que o Raspberry Pi realizasse parte do processamento do modelo de forma embarcada. As imagens submetidas ao modelo de segmentação serão armazenadas localmente e, quando houver conexão à internet, serão enviadas para nossa API via protocolo MQTT. Nossa API terá uma rota de consumo para capturar essas imagens brutas e seus metadados, submetendo-os ao segundo modelo, que fará a contagem de árvores individualmente. Esse fluxo de trabalho está detalhado em nossa arquitetura de blocos, no componente "Embarcado".
+Para a sprint final, planejamos que o Raspberry Pi realizasse parte do processamento do modelo de forma embarcada. As imagens captadas pelo Rapsberry acoplado no drone serão submetidas ao modelo de segmentação, armazenadas localmente e, quando houver conexão à internet, serão enviadas para nossa API via protocolo MQTT. Uma vez que o envio ocorra, vamos submeter esses dados como input para o segundo modelo, que efetivamente irá fazer a contagem individual de árvores. Além disso, nossa API terá uma rota de consumo para capturar essas imagens brutas e seus metadados, podendo ser consumido para manipulação por parte do usuário. Esse fluxo de trabalho está detalhado em nossa arquitetura de blocos, no componente "Embarcado".
+
+![Bloco Nuvem](../../static/img/bloco_embarcado.png)
 
 **Nuvem**:
 
@@ -25,23 +27,35 @@ Atualmente, o status da nuvem está em 0% de conclusão, pois ainda não tivemos
 Sprint Final:
 Nossa arquitetura de nuvem foi planejada para garantir a maior robustez possível para o MVP. Ela inclui dois serviços principais da AWS: S3 e RDS. O S3 será utilizado como bucket para armazenar informações não estruturadas, como imagens processadas pelo modelo, enquanto o RDS armazenará os metadados, como coordenadas e quantidade de árvores identificadas em cada imagem. Dessa forma, nosso progresso quanto a sprint final encontra-se em 10%, por conta da assertividade da nossa arquitetura nesse momento.
 
+![Bloco Nuvem](../../static/img/bloco_nuvem.png)
 
 
 **Modelos**:
 
 Sprint Atual:
-Neste sprint, nosso foco foi definir claramente a arquitetura e os rumos do projeto. Para a Sprint 3, o objetivo era rodar o modelo de detecção de área florestal no Raspberry Pi, o que foi alcançado, embora sem considerações de performance neste estágio. Na Sprint 2, conseguimos testar dois modelos diferentes para a detecção de árvores individualmente, que serão refinados nas próximas sprints. Estimamos que 80% do trabalho está completo, com os 20% restantes focados no aprimoramento dos modelos e nas primeiras considerações de performance.
+Neste sprint, nosso foco foi definir claramente a arquitetura e os rumos do projeto. Para a Sprint 3, o objetivo era rodar o modelo de detecção de áreas florestais no Raspberry Pi, o que foi alcançado, embora sem considerações de desempenho nesta etapa. No Sprint 2, conseguimos testar dois modelos diferentes para a detecção individual de árvores, que serão refinados nas próximas sprints. Estimamos que 90% do trabalho deste sprint está completo, com os 10% restantes focados no aprimoramento dos modelos e nas primeiras considerações de desempenho.
+
+Durante o segundo sprint, ao entregar os três modelos, o parceiro requisitou que fizéssemos alguns testes aplicando o modelo a alguns cenários, por exemplo, à visão de satélite do Parque Ibirapuera. A ideia principal da nossa arquitetura é realizar o processamento metade embarcado e metade na nuvem. Para isso, temos o modelo de pré-processamento que será focado no dispositivo embarcado. Esse teste mostrou-se muito satisfatório para o que esperávamos alcançar neste sprint. A ideia é submeter ao segundo modelo uma área já processada, para trabalhar somente nas áreas onde efetivamente existam árvores.
+
+![resultado teste do modelo de segmentação](../../static/img/s3_area_florestal.png)
+
 
 Sprint Final:
-Na sprint final, pretendemos melhorar a precisão dos modelos de detecção de árvores, otimizar sua performance ao rodar no Raspberry Pi, e garantir uma conexão eficiente via MQTT. Como esta etapa é voltada para refinamento e melhorias, estimamos que estamos em 50% de conclusão.
+Na sprint final, pretendemos melhorar a precisão dos modelos de detecção de árvores e área florestal, otimizar a performance ao rodar os modelos, garantir uma conexão eficiente via MQTT e estruturar de forma assertiva os metadados dos modelos. Como esta etapa é voltada para refinamento e melhorias, estimamos que estamos em 50% de conclusão. 
+
+
 
 **API**:
 
 Sprint Atual:
-Neste sprint, nosso foco é concluir a integração do serviço de autenticação, iniciar o desenvolvimento do serviço da API responsável pelo upload de imagens e integrar o RabbitMQ como uma fila de comunicação MQTT entre o Raspberry Pi e nossa API. Dessa forma, estimamos que nosso sprint atual em relação à API está em 60%.
+Neste sprint, nosso foco foi concluir a integração do serviço de autenticação, desenvolver o serviço da API responsável pelo upload de imagens e integrar o RabbitMQ como uma fila de comunicação MQTT entre o Raspberry Pi e nossa API. Dessa forma, a equipe conseguiu concretizar a maioria dessas entregas, somente com pendências na integração MQTT estimamos que nosso sprint atual em relação à API está em 80%.
 
 Sprint Final:
-Na sprint final, planejamos aprimorar a API para que ela funcione como um sistema centralizador, gerenciando o envio e recebimento de informações entre o dispositivo embarcado, a nuvem e o dashboard. A comunicação com o dispositivo embarcado será realizada por meio do protocolo MQTT, consumindo dados pré-processados e seus metadados, e passando-os para um novo modelo que fará a contagem de árvores de forma individual. Além disso, a API incluirá rotas para outros tipos de pré-processamento e integrações, como: consumo de dados pelo Metabase, upload de imagens diretamente para o modelo de contagem de árvores, e um serviço de autenticação robusto. Dessa forma, estimamos que nosso projeto em relação à API do sprint final está em 20%.
+No sprint final, planejamos aprimorar a API para que ela funcione como um sistema centralizador, gerenciando o envio e recebimento de informações entre o dispositivo embarcado, a nuvem e o dashboard. A comunicação com o dispositivo embarcado será realizada por meio do protocolo MQTT, consumindo dados pré-processados e seus metadados, e passando-os para um novo modelo que fará a contagem de árvores de forma individual. Além disso, a API incluirá rotas para outros tipos de pré-processamento e integrações, como: consumo de dados pelo Metabase, upload de imagens diretamente para o modelo de contagem de árvores, e um serviço de autenticação robusto. Dessa forma, estimamos que nosso projeto em relação à API do sprint final está em 30%.
+
+Bloco de API e suas responsabilidades:
+
+![Bloco API](../../static/img/bloco_api.png)
 
 
 **Dashboard**:
@@ -64,14 +78,14 @@ O foco do embarcado para esta sprint é executar o modelo de segmentação de á
 
 
 **Nuvem**:
-No bloco da nuvem, dependemos da licença da AWS Academy. Com essa licença, poderemos criar os serviços RDS e S3 e, durante a sprint, trabalharemos na integração de ambos com a API. O objetivo é garantir o acesso aos dois serviços para armazenar as imagens processadas de forma adequada.
+No bloco da nuvem, dependemos da licença da AWS Academy. Com essa licença, poderemos criar os serviços RDS e S3 e, durante o sprint, trabalharemos na integração de ambos com a API. O objetivo é garantir o acesso aos dois serviços para armazenar as imagens processadas de forma adequada.
 
 **Modelos**:
-Para esta sprint, nosso foco nos modelos é o seguinte: para o modelo de segmentação, nosso objetivo é executá-lo no Raspberry Pi e armazenar as imagens localmente. Já para o segundo modelo, vamos trabalhar para aumentar a acurácia na detecção e contagem de árvores.
+Para este sprint, nosso foco nos modelos é o seguinte: para o modelo de segmentação, nosso objetivo é executá-lo no Raspberry Pi e armazenar as imagens localmente. Já para o segundo modelo, vamos trabalhar para aumentar a acurácia na detecção e contagem de árvores, já que durante o sprint 3 esses modelos provaram que precisam de tunagem.
 
 
 **API**:
-Para esta sprint, nosso foco no bloco da API é desenvolver a integração entre a fila RabbitMQ e um consumer dentro da nossa API, utilizando o protocolo MQTT para a comunicação. Além disso, pretendemos finalizar o serviço de autenticação para garantir o controle de acesso do usuário, determinando o que ele pode ou não fazer. Por fim, vamos implementar o segundo serviço: uma rota para upload de imagens e a submissão dessas fotos ao modelo de detecção unitária e contagem de árvores.
+Para este sprint, nosso foco no bloco da API é desenvolver a integração entre a fila RabbitMQ e um consumer dentro da nossa API, utilizando o protocolo MQTT para a comunicação. Além disso, pretendemos finalizar o serviço de autenticação para garantir o controle de acesso do usuário, determinando o que ele pode ou não fazer. Por fim, vamos implementar o segundo serviço: uma rota para upload de imagens e a submissão dessas fotos ao modelo de detecção unitária e contagem de árvores.
 
 
 **Dashboard**:
@@ -83,10 +97,12 @@ Para essa sprint, não vamos trabalhar em cima do dashboard ainda, focando em de
 
 Para essa atividade, recebemos a orientação de tornar a arquitetura mais auto explicativa e fácil de visualizar. Após algumas discussões, decidimos adicionar descrições aos fluxos de integração e incluir flashcards de responsabilidades para cada bloco, visando uma compreensão mais clara e direta.
 
+Arquitetura completa:
+![Arquitetura](../../static/img/arquitetura.png)
 
 
 
-### Manual de usuário:
+### Manual do usuário:
 
 **Introdução**:
 O objetivo da nossa PoC de modelo de inteligência artificial embarcado é demonstrar a viabilidade de um sistema para contagem de árvores. A proposta é otimizar e aprimorar o processo atual de contagem e monitoramento, proporcionando uma solução mais eficiente e precisa.
