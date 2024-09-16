@@ -1,15 +1,11 @@
-# Base image para o RabbitMQ com o plugin de gerenciamento
-FROM rabbitmq:3-management
+FROM python:3.12-slim-bookworm
 
-# Definir variáveis de ambiente para RabbitMQ
-ENV RABBITMQ_DEFAULT_USER=grupo4
-ENV RABBITMQ_DEFAULT_PASS=grupo4
+WORKDIR /worker
 
-# Expor as portas do RabbitMQ
-EXPOSE 5672 15672
+COPY . .
 
-# Adicionar volumes para persistência de dados
-VOLUME ["/var/lib/rabbitmq"]
+RUN pip install --upgrade pip 
 
-# Comando para iniciar o RabbitMQ
-CMD ["rabbitmq-server"]
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python", "main.py"]
