@@ -30,7 +30,7 @@ Nossa arquitetura de nuvem foi planejada para garantir a maior robustez possíve
 ![Bloco Nuvem](../../static/img/bloco_nuvem.png)
 
 
-**Modelos**:
+**Modelo de segmentação**:
 
 Sprint Atual:
 Neste sprint, nosso foco foi definir claramente a arquitetura e os rumos do projeto. Para a Sprint 3, o objetivo era rodar o modelo de detecção de áreas florestais no Raspberry Pi, o que foi alcançado, embora sem considerações de desempenho nesta etapa. No Sprint 2, conseguimos testar dois modelos diferentes para a detecção individual de árvores, que serão refinados nas próximas sprints. Estimamos que 90% do trabalho deste sprint está completo, com os 10% restantes focados no aprimoramento dos modelos e nas primeiras considerações de desempenho.
@@ -43,6 +43,25 @@ Durante o segundo sprint, ao entregar os três modelos, o parceiro requisitou qu
 Sprint Final:
 Na sprint final, pretendemos melhorar a precisão dos modelos de detecção de árvores e área florestal, otimizar a performance ao rodar os modelos, garantir uma conexão eficiente via MQTT e estruturar de forma assertiva os metadados dos modelos. Como esta etapa é voltada para refinamento e melhorias, estimamos que estamos em 50% de conclusão. 
 
+**Modelos de detecção individual**:
+
+**Sprint Atual:**
+
+Nesta sprint, nosso foco foi testar o desempenho do modelo de detecção de árvores, **ONNX** e **TFLite**, que apresentaram baixa precisão em sua execução inicial no Raspberry Pi. Embora o modelo tenha sido executado corretamente e tenha produzido saídas válidas (bounding boxes), os resultados indicaram a necessidade de ajustes no treinamento e na conversão do modelo para melhorar a precisão. 
+
+Foram realizados testes com o modelo TFLite, utilizando uma imagem de referência, mas o número de detecções foi insatisfatório. Após o processamento e a aplicação de Non-Maximum Suppression (NMS), o modelo detectou um número muito baixo de bounding boxes ou, em alguns casos, nenhum. Isso sugere que os parâmetros de confiança e as condições do dataset e treinamento precisam ser ajustados para melhorar os resultados.
+
+![resultado teste do modelo de segmentação](../../static/img/arvore_com_bounding_boxes.jpg)
+
+
+Nas próximas etapas, planejamos refazer o treinamento do modelo e realizar uma nova conversão para o formato TFLite e ONNX, aplicando as lições aprendidas sobre a otimização de hiperparâmetros e o balanceamento do dataset. Esperamos que essas melhorias proporcionem uma detecção mais robusta e precisa das árvores, especialmente para aplicações em dispositivos embarcados de baixa capacidade de processamento, como o Raspberry Pi.
+
+**Desempenho Inicial:**
+
+- **Execução**: O modelo rodou no Raspberry Pi, mas a precisão foi insatisfatória.
+- **Confiança média das detecções**: A maioria das detecções ficou abaixo do limiar de confiança desejado.
+- **Número de bounding boxes detectadas**: Muito abaixo do esperado, sugerindo necessidade de ajustes.
+- **Plano de ação**: Refazer o treinamento do modelo, ajustar hiperparâmetros e melhorar a conversão para TFLite.
 
 
 **API**:
