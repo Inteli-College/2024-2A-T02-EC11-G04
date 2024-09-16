@@ -1,6 +1,10 @@
-# Fluxo e estrutura de dados no embarcado
+---
+title: Fluxo e estrutura de dados no embarcado
+sidebar_position: 1
+---
 
-## Descrição Geral
+# Introdução
+
 Este projeto tem como objetivo a identificação de regiões florestais e contagem de árvores por meio de um sistema embarcado, utilizando o **Raspberry Pi**. O projeto processa imagens através de um modelo de segmentação semântica que identifica as árvores em cada imagem. As imagens processadas e seus metadados são enviados para uma fila **RabbitMQ**, onde outros sistemas podem realizar processamento adicional ou armazenamento.
 
 O projeto foi organizado de maneira modular, com o objetivo de facilitar a manutenção, o processamento distribuído e a reutilização de componentes. Utiliza uma abordagem de processamento assíncrono para monitorar um diretório local de imagens, processá-las e enviá-las para uma fila de mensagens.
