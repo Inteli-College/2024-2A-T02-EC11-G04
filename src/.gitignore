@@ -10,3 +10,9 @@ venv/
 
 # Linter stuff
 .ruff_cache
+
+# Log stuff
+logs/
+
+# Images stuff
+images/

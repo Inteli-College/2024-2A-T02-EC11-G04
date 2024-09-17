@@ -1,5 +1,5 @@
 from pika import BlockingConnection, ConnectionParameters, PlainCredentials
-from pika.exceptions import AMQPConnectionError, AMQPChannelError
+from pika.exceptions import AMQPChannelError, AMQPConnectionError
 from dotenv import load_dotenv
 
 import os
