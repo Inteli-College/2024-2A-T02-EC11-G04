@@ -4,7 +4,6 @@ from pika.exceptions import AMQPChannelError
 from .client import PikaClient
 from utils import Logger
 
-
 _logger = Logger(logger_name=__name__)._get_logger()
 
 
@@ -33,12 +32,6 @@ class PikaPublisher(PikaClient):
             raise AMQPChannelError("Channel is not open.")
 
         try:
-            _logger.info("""Publishing message
-                        Exchange: %s
-                        Routing Key: %s""",
-                        self._amqp_exchange,
-                        self._amqp_routing_key
-                        )
             self._channel.basic_publish(
                 exchange=self._amqp_exchange,
                 routing_key=self._amqp_routing_key,
