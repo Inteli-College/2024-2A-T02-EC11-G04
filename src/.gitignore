@@ -11,6 +11,12 @@ venv/
 # Linter stuff
 .ruff_cache
 
+# Log stuff
+logs/
+
+# Images stuff
+images/
+
 # terraform
 infrastructure/terraform/global/.terraform
 infrastructure/terraform/global/.terraform.lock.hcl
