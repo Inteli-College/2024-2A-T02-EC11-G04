@@ -1,4 +1,4 @@
-name: greentech-worker
+name: greentch-worker
 
 services:
   worker:
@@ -11,11 +11,21 @@ services:
     depends_on:
       - rabbitmq-broker
 
+  register:
+    build: 
+      context: ./components/register
+      dockerfile: Dockerfile
+    container_name: demo-register
+    networks:
+      - messaging
+    depends_on:
+      - rabbitmq-broker
+
   rabbitmq-broker:
     build: 
       context: ./infrastructure/rabbitmq
       dockerfile: Dockerfile
-    container_name: demo-broker
+    container_name: broker
     ports:
       - "5672:5672"
       - "15672:15672"
