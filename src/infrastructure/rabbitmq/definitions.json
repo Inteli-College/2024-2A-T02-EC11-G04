@@ -6,7 +6,7 @@
     "users": [
         {
             "name": "grupo4",
-            "password_hash": "vsY+3wNBKljYSyH3v0341T9nUmvsgk4K/2aT4oAGJuqQuNdN",
+            "password_hash": "rQTOGukhvTOojkMz2JlhFZ9Hdo5/dHk78sxO77ykDDNf87NX",
             "hashing_algorithm": "rabbit_password_hashing_sha256",
             "tags": "administrator"
         }
