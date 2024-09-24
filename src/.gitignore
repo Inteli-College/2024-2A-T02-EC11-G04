@@ -16,3 +16,8 @@ logs/
 
 # Images stuff
 images/
+
+# terraform
+infrastructure/terraform/global/.terraform
+infrastructure/terraform/global/.terraform.lock.hcl
+infrastructure/terraform/global/terraform.tfstate.backup
