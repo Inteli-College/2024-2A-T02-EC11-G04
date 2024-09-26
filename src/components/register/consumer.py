@@ -6,7 +6,7 @@ import io
 from PIL import Image
 import json
 import logging
-import settings
+import os
 
 from client import PikaClient
 from utils import Logger
@@ -33,8 +33,7 @@ def decode_and_upload(base64_image: str, bucket_name: str, s3_file_name: str):
         boto3.set_stream_logger(name='boto3', level=logging.DEBUG)
 
         # Criando um cliente S3
-        s3_client = boto3.client('s3', region_name=settings.AWS_REGION, aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-                          aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+        s3_client = boto3.client('s3')
 
         # Enviando a imagem para o S3
         s3_client.upload_fileobj(

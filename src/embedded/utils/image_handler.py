@@ -2,6 +2,7 @@ import base64
 import json
 
 from .logger import Logger
+from datetime import datetime
 
 _logger=Logger(logger_name=__name__)._get_logger()
 
@@ -28,7 +29,7 @@ class ImageHandler:
             metadata = {
                 "image": image_base64, 
                 "image_metadata": { 
-                    "image_name": "teste", 
+                    "image_name": "image_" + datetime.now().strftime('%d-%m-%Y_%H-%M-%S-%f')[:-3], 
                     "area": 0 #TODO: Implement area calculation @jeanroths/@joaocarazzato
                     } 
                 }

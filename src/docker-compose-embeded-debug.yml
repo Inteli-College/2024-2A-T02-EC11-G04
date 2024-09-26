@@ -20,6 +20,8 @@ services:
       - messaging
     depends_on:
       - rabbitmq-broker
+    env_file:
+      - .env
 
   rabbitmq-broker:
     build: 
