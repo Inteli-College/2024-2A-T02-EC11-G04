@@ -105,7 +105,7 @@ class ImageHandler:
         Salva os metadados da imagem processada junto com a imagem original em Base64.
         """
         # Remover a extensão do nome da imagem
-        image_name_without_extension = os.path.splitext(image_path)[0]
+        image_name_without_extension = os.path.splitext(os.path.basename(image_path))[0]
 
         # Codificar a imagem original em Base64
         with open(image_path, "rb") as image_file:
