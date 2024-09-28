@@ -7,7 +7,6 @@ from utils import DirectoryMonitor, ImageHandler, Logger
 
 _logger = Logger(logger_name=__name__)._get_logger()
 
-
 class Worker:
     def __init__(self, directory_monitor: DirectoryMonitor,
                 image_handler: ImageHandler,

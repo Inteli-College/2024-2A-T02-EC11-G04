@@ -8,7 +8,6 @@ from .logger import Logger
 
 _logger = Logger(logger_name=__name__)._get_logger()
 
-
 class DirectoryMonitor:
     """Monitors a directory continuously for image files and places them in a processing queue."""
     
