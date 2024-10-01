@@ -1,3 +1,8 @@
+---
+title: Embarcado
+sidebar_position: 2
+---
+
 ### Documentação do Sistema de Captura e Processamento de Imagens no Raspberry Pi 5
 
 ---
