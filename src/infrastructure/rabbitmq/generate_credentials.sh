@@ -8,4 +8,4 @@ function encode_password(){
     echo $PASS
 }
 
-encode_password "greentech"
+encode_password "grupo4"
