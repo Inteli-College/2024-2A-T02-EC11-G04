@@ -43,7 +43,7 @@ A seguinte tabela apresenta os custos envolvidos para a compra do hardware neces
 | Raspberry Pi AI Kit | Módulo de otimização de processamento de IA para o Raspberry Pi | 800.00        |
 | Power Bank | Fonte de energia para o Raspberry Pi em 5V 5A | 700.00        |
 
-**Custo Total de IoT**: 1.015 R$
+**Custo Total de IoT**: 14.015 R$
 
 ### Resumo da configuração de cada serviço:
 - **Amazon RDS** : Quantidade de armazenamento (100 GB), Nós (2), Tipo de instância (db.m1.large), Utilização (somente sob demanda) (100 %Utilized/Month), Opção de implantação (Multi-AZ), Modelo de preço (OnDemand), Volume de armazenamento (SSD de uso geral (gp2)), Custo de retenção por um mês (por vCPU/mês) (3.1098000000), Custo de cada mês adicional de retenção (por vCPU/mês) (0.1308000000), Custo de retenção total (por vCPU/mês) (4.16)
