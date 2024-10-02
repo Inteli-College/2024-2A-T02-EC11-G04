@@ -34,6 +34,16 @@ Essa tabela de custos foi feita utilizando o período de tempo do projeto, ou se
 
 ## Tabela de Custos de IoT:
 
+A seguinte tabela apresenta os custos envolvidos para a compra do hardware necessário para o dispositivo na borda, composto principalmente pelo Raspberry Pi e o Drone.
+
+| Item          | Descrição | Custo Total (R$) |
+| ------------- | --------- | ---------------- |
+| Raspberry Pi 5 8gb  | Microprocessador utilizado para a computação na borda | 980.00        |
+| DJI Air 2S   | Drone utilizado para a coleta de imagens | 11,535.00           |
+| Raspberry Pi AI Kit | Módulo de otimização de processamento de IA para o Raspberry Pi | 800.00        |
+| Power Bank | Fonte de energia para o Raspberry Pi em 5V 5A | 700.00        |
+
+**Custo Total de IoT**: 1.015 R$
 
 ### Resumo da configuração de cada serviço:
 - **Amazon RDS** : Quantidade de armazenamento (100 GB), Nós (2), Tipo de instância (db.m1.large), Utilização (somente sob demanda) (100 %Utilized/Month), Opção de implantação (Multi-AZ), Modelo de preço (OnDemand), Volume de armazenamento (SSD de uso geral (gp2)), Custo de retenção por um mês (por vCPU/mês) (3.1098000000), Custo de cada mês adicional de retenção (por vCPU/mês) (0.1308000000), Custo de retenção total (por vCPU/mês) (4.16)
