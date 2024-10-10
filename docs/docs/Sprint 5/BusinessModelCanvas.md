@@ -1,3 +1,8 @@
+---
+title: Business Model Canvas
+sidebar_position: 1
+---
+
 O **Business Model Canvas** oferece uma análise abrangente da empresa e de seu posicionamento no mercado. Essa abordagem é fundamental para compreendermos como devemos desenvolver nosso produto e quais tipos de ganhos ele pode gerar para a empresa. Com base nessa análise, elaboramos nosso modelo de negócios com um foco específico na divulgação da ferramenta e nas atividades da empresa cliente, que se concentram no reflorestamento, na venda de créditos de carbono e na promoção da sustentabilidade.
 
 ## 1. Segmentos de Clientes
