@@ -30,11 +30,13 @@ class DirectoryMonitor:
         
         while not self._stop_polling.is_set():
             try:
+                _logger.info("Falls on directory pooling")
                 if not self._directory.exists():
                     os.mkdir(self._directory)
                 
                 for image_path in self._directory.iterdir():
                     if image_path.is_file() and not image_path.name.startswith('.') and image_path.suffix.lower() == '.png' or '.jpg':
+                        _logger.info("image_path: %s", image_path)
                         if image_path not in processed_files:
                             self._local_bus.put(image_path)
                             processed_files.add(image_path)

@@ -37,9 +37,9 @@ class Logger:
         format for log messages, including the timestamp, logger name, log level,
         and the message itself.
         """
-        log_file = f'./logs/log_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log'
-        handler = logging.FileHandler(filename=log_file, mode='a')
-        # handler = logging.StreamHandler() # -> Uncomment this line to log to the console
+        #log_file = f'./logs/log_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log'
+        #handler = logging.FileHandler(filename=log_file, mode='a')
+        handler = logging.StreamHandler() # -> Uncomment this line to log to the console
         formatter = logging.Formatter(
             fmt="[%(asctime)s] [%(name)s] | %(levelname)s -> %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",

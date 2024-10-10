@@ -37,7 +37,7 @@ class PikaPublisher(PikaClient):
                 routing_key=self._amqp_routing_key,
                 body=message,
                 properties=BasicProperties(
-                    delivery_mode=2
+                    delivery_mode=1
                 )
             )
             _logger.info("Message published successfully.")
