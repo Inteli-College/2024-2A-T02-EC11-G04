@@ -19,7 +19,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session
 from sqlalchemy import insert
 
-DATABASE_URL = "postgresql+psycopg2://postgres:postgres123@prod-db.c8q700syfk11.us-east-1.rds.amazonaws.com:5432/postgres"
+DATABASE_URL = ""
 engine = create_engine(DATABASE_URL)
 session_db = Session(bind=engine)
 
@@ -55,9 +55,9 @@ def decode_and_upload(base64_image: str, bucket_name: str, s3_file_name: str):
         buffered.seek(0)  # Garantir que o ponteiro está no início do arquivo
 
 #        session = boto3.Session(
-#        aws_access_key_id='ASIA3NDYPRREVYCDMHAH',
-#        aws_secret_access_key='/Zv2jV2/RDCgoBjHrUMQgW08vVHvdktUBz/EZihR',
-#        aws_session_token='IQoJb3JpZ2luX2VjEM3//////////wEaCXVzLXdlc3QtMiJHMEUCIQCAtLAMNPK7OKfZ6Xmu3vFsczi+VUZYWxkcolUp8aAdEgIgJfIA61b8tl+IIYqP5jfFDjxkXm5XKBsWPDKAKokop3EqqQIIFhABGgw3ODQwODQyMDg3MTMiDHGQUFUtwrAAPnlWFyqGAtuIz0w6d+NQq5HK7ytcaOzi2NirCMsDAHHZOPBhaXFxtryEX9HGLdsJjlJprlqhohdW6cSccJ3zIcwE6KINleBf+sRl1F1tDAGPLxiCxd7iqZIUYUtdlls59BD9K13kU0X0lqqs1tScdYBT4B6fd99lpAAE7zh1sYkmyenH0OtIuPKvI6W52ApXgVX2pOPExH+XoNc2I02sg37kQOY7x1dP9XAuke1m9Aj29eNBCYquW4O35A/Nq3xHc4oBFuc2lYhjnwd+9hpxNtllpklPx7sX9sI9M1TVs+N8T4T9O4eKW8xu5J0gq37lZ+mK9+dfNfZoQriMtDP6qoc5Wk8UzUWhVaUovIUwsaTVtwY6nQFQ1M+WwUujNNAtZDcoKSmRhUthKHj0S9TUSUDeNlQ7uAE0RdUn5OJc0O5FSTbMmAzEkKr7b/bQM3HfFVf8qPlUIEi3sxpYT3502JOyKjO/u5JxD+aaNKe6bMs2SX6kw9R8m2J4sd5pQLO11nVztw6HRpAi0o3qapmCHDcQA43Cv3hRMuNwt0kk3c/uq49+vi2x2qiFmgbfq6VsDpQl')
+#        aws_access_key_id=""
+#        aws_secret_access_key=""
+#        aws_session_token=""
         #credentials = session.get_credentials()
 #        _logger.info(session)
 
@@ -66,9 +66,9 @@ def decode_and_upload(base64_image: str, bucket_name: str, s3_file_name: str):
 
         # Criando um cliente S3
         s3_client = boto3.client('s3',
-        aws_access_key_id='ASIAXDLA5ISI5HDVKCGG',
-        aws_secret_access_key='RXaBukJN+otjDZtTFL1wSEshLRKMk5wfdMeG3Z/H',
-        aws_session_token='IQoJb3JpZ2luX2VjEBUaCXVzLXdlc3QtMiJHMEUCIE/IdHS1NnfK1V4kCV8gaosYSwkpqneLSF0tbXll4HUcAiEAxtSkf2e5KdGC/rc1ZNQtcxz5JjWfnuHr41QwXzd+dPsqpAIIbhAAGgw0ODgyMTg5MDM2OTciDIGwOU+wXEnsuhYL9SqBAjNLYzLFZ7Mp+SrVQC/xzo9YJCzHNCuVjuVlrK+GHNv1dbOLt2rWMmZXV+vlu2eCn4WpH0gPiHu7Jzo3wTGXhw1BRqpqeX/I7NPaSWnb7OMJEQA7ZaNKcxE57OMNsaXkxR3ujLptgi4a5qVkY7lvWRg9IobnPoc5Uz9e5HUbIdU4m+U7fMMwN1fvLDneKain5gDmEoBTnAU7YFoFJoz72pznO9jTbqb7B4YGhP72w/QaF8gqn4X7YEZL0FUy+4ZEZYrSLdP221ITvb68jma5511k7BKbeWTrW06tMrKssrleIWBErzUK5tcxK7W0shSsDBhaBgSzrVlR1XkhH5XyGc5MMLS4nbgGOp0BeH8e0iWORhrgAtqbgz3SZI/k0o47e6/48ZzUlNE3CdKB/uptAXrHQccDA34SHj94pzRHf5I3X0vkAFcMQ13LINcmlTCHbakYjH3S1a2k5AJh4x/QBq27pqYS4hYm9W00A7Uvce0+CW3XIi2lX+WTpfDTh0ONdBMt1twkXnfq3/lucXbjt+gq7A+KjwcWG5CCFxI1yVhK/m6jvbT4TA==')
+        aws_access_key_id= ""
+        aws_secret_access_key=""
+        aws_session_token=""
         _logger.info("Client stablished")
         # Enviando a imagem para o S3
         s3_client.upload_fileobj(
